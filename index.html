@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services de Calfeutrage Professionnels</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('/api/placeholder/1200/600') center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+        }
+        
+        /* Services Section */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark-color);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: #777;
+        }
+        
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Gallery Section */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(44, 62, 80, 0.8);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Form Section */
+        .form-section {
+            background-color: var(--light-color);
+        }
+        
+        .form-container {
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+        
+        .form-col {
+            flex: 1;
+            padding: 0 10px;
+            min-width: 250px;
+        }
+        
+        .info-bubble {
+            position: relative;
+            display: inline-block;
+            margin-left: 5px;
+            cursor: help;
+        }
+        
+        .info-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .info-content {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--dark-color);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            width: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 10;
+        }
+        
+        .info-bubble:hover .info-content {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .info-content::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px;
+            border-style: solid;
+            border-color: var(--dark-color) transparent transparent transparent;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-col h3 {
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .form-col {
+                flex: 0 0 100%;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="/api/placeholder/40/40" alt="Logo Calfeutrage">
+                <span>CalfeuPro</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Réalisations</a></li>
+                <li><a href="#contact">Demande de Devis</a></li>
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Services de Calfeutrage Professionnels</h1>
+            <p>Protection efficace contre les infiltrations d'eau, l'humidité et les courants d'air pour votre domicile ou commerce</p>
+            <a href="#contact" class="btn">Demander un Devis Gratuit</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Qu'est-ce que le Calfeutrage?</h2>
+                <p>Découvrez nos services professionnels pour protéger votre propriété</p>
+            </div>
+            <div class="services-container">
+                <div class="service-card">
+                    <img src="/api/placeholder/400/200" alt="Calfeutrage de fenêtres" class="service-img">
+                    <div class="service-content">
+                        <h3>Calfeutrage de Fenêtres</h3>
+                        <p>Le calfeutrage consiste à sceller les interstices autour des fenêtres pour empêcher les infiltrations d'air et d'eau. Ce processus améliore l'efficacité énergétique de votre maison et prolonge la durée de vie de vos fenêtres.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="/api/placeholder/400/200" alt="Calfeutrage de portes" class="service-img">
+                    <div class="service-content">
+                        <h3>Calfeutrage de Portes</h3>
+                        <p>Nous appliquons un scellant de haute qualité autour des cadres de portes pour éliminer les courants d'air, réduire le bruit extérieur et empêcher l'entrée d'insectes et de poussière dans votre domicile.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="/api/placeholder/400/200" alt="Calfeutrage de joints" class="service-img">
+                    <div class="service-content">
+                        <h3>Calfeutrage de Joints Extérieurs</h3>
+                        <p>Nous traitons les joints entre les différents matériaux de construction de votre maison pour prévenir les dommages causés par l'eau et maintenir l'intégrité structurelle de votre bâtiment.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="/api/placeholder/400/200" alt="Calfeutrage de salles de bain" class="service-img">
+                    <div class="service-content">
+                        <h3>Calfeutrage de Salles de Bains</h3>
+                        <p>Nous appliquons un scellant résistant à l'humidité et anti-moisissure autour des baignoires, douches et autres fixtures pour prévenir les fuites d'eau et les dommages à long terme.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="/api/placeholder/400/200" alt="Calfeutrage de fondations" class="service-img">
+                    <div class="service-content">
+                        <h3>Calfeutrage de Fondations</h3>
+                        <p>Nous scellons les fissures dans les fondations pour empêcher l'infiltration d'eau dans votre sous-sol, prévenant ainsi les problèmes d'humidité et de moisissure.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="/api/placeholder/400/200" alt="Remplacement de calfeutrage" class="service-img">
+                    <div class="service-content">
+                        <h3>Remplacement de Calfeutrage</h3>
+                        <p>Nous retirons l'ancien calfeutrage détérioré et le remplaçons par un nouveau scellant de qualité supérieure pour une protection optimale contre les éléments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Réalisations</h2>
+                <p>Découvrez le travail que nous avons effectué pour nos clients satisfaits</p>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/400" alt="Projet de calfeutrage 1" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Rénovation Résidentielle</h3>
+                        <p>Calfeutrage complet des fenêtres et portes</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/400" alt="Projet de calfeutrage 2" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Immeuble Commercial</h3>
+                        <p>Calfeutrage extérieur et protection contre les intempéries</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/400" alt="Projet de calfeutrage 3" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Rénovation de Salle de Bain</h3>
+                        <p>Calfeutrage anti-humidité pour baignoire et douche</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/400" alt="Projet de calfeutrage 4" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Traitement de Fondation</h3>
+                        <p>Scellement des fissures et prévention d'infiltration</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/400" alt="Projet de calfeutrage 5" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Rénovation de Façade</h3>
+                        <p>Calfeutrage des joints de parement extérieur</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/api/placeholder/400/400" alt="Projet de calfeutrage 6" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Projet Résidentiel</h3>
+                        <p>Calfeutrage pour l'efficacité énergétique</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="contact" class="section form-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Demande de Devis</h2>
+                <p>Remplissez le formulaire ci-dessous pour recevoir un devis personnalisé</p>
+            </div>
+            <div class="form-container">
+                <form id="quote-form">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="firstName">Prénom</label>
+                                <input type="text" id="firstName" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="lastName">Nom</label>
+                                <input type="text" id="lastName" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="phone">Numéro de téléphone</label>
+                                <input type="tel" id="phone" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="linearFeet">Mètres linéaires à traiter
+                            <div class="info-bubble">
+                                <span class="info-icon">i</span>
+                                <div class="info-content">
+                                    <p>Pour calculer les mètres linéaires, mesurez la longueur totale des zones à calfeutrer. Par exemple, pour une fenêtre, mesurez le périmètre complet (les 4 côtés). Pour plusieurs fenêtres, additionnez tous les périmètres.</p>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="number" id="linearFeet" class="form-control" min="0" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description des services requis</label>
+                        <textarea id="description" class="form-control" placeholder="Décrivez votre projet, incluant le type de surface à calfeutrer, l'emplacement, et tout détail pertinent..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Soumettre la Demande</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>CalfeuPro</h3>
+                <p>Services professionnels de calfeutrage pour résidences et commerces. Notre expertise vous garantit une protection optimale contre les infiltrations d'eau et d'air.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Liens Rapides</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Réalisations</a></li>
+                    <li><a href="#contact">Demande de Devis</a></li>
+                    <li><a href="#">Témoignages</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-info">
+                <h3>Contact</h3>
+                <p>123 Rue du Calfeutrage</p>
+                <p>Montréal, QC H1X 2Y3</p>
+                <p>Téléphone: (514) 123-4567</p>
+                <p>Email: info@calfeutragepro.ca</p>
+            </div>
+        </div>
+        <div class="copyright container">
+            <p>&copy; 2025 CalfeuPro. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre demande! Nous vous contacterons sous peu avec un devis personnalisé.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
