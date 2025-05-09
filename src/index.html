@@ -43,7 +43,7 @@
             </div>
             <div class="services-container">
                 <div class="service-card">
-                    <img src="/api/placeholder/400/200" alt="Calfeutrage de fenêtres" class="service-img">
+                    <img src="/src/public/window.png" alt="Calfeutrage de fenêtres" class="service-img">
                     <div class="service-content">
                         <h3>Calfeutrage de Fenêtres</h3>
                         <p>Le calfeutrage consiste à sceller les interstices autour des fenêtres pour empêcher les
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="/api/placeholder/400/200" alt="Calfeutrage de portes" class="service-img">
+                    <img src="/src/public/door.png" alt="Calfeutrage de portes" class="service-img">
                     <div class="service-content">
                         <h3>Calfeutrage de Portes</h3>
                         <p>Nous appliquons un scellant de haute qualité autour des cadres de portes pour éliminer les
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="/api/placeholder/400/200" alt="Calfeutrage d'expansion" class="service-img">
+                    <img src="/src/public/house.png" alt="Calfeutrage d'expansion" class="service-img">
                     <div class="service-content">
                         <h3>Calfeutrage d'Expansion</h3>
                         <p>Nous appliquons un calfeutrage d'expansion spécialement conçu pour protéger contre
@@ -81,45 +81,24 @@
             </div>
             <div class="gallery-container">
                 <div class="gallery-item">
-                    <img src="/api/placeholder/400/400" alt="Projet de calfeutrage 1" class="gallery-img">
+                    <img src="/src/public/residential.png" alt="Projet de calfeutrage 1" class="gallery-img">
                     <div class="gallery-overlay">
                         <h3>Rénovation Résidentielle</h3>
                         <p>Calfeutrage complet des fenêtres et portes</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/api/placeholder/400/400" alt="Projet de calfeutrage 2" class="gallery-img">
+                    <img src="/src/public/commercial.png" alt="Projet de calfeutrage 2" class="gallery-img">
                     <div class="gallery-overlay">
                         <h3>Immeuble Commercial</h3>
-                        <p>Calfeutrage extérieur et protection contre les intempéries</p>
+                        <p>Calfeutrage à grande échelle et protection contre les intempéries</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/api/placeholder/400/400" alt="Projet de calfeutrage 3" class="gallery-img">
+                    <img src="/src/public/outside-renovation.png" alt="Projet de calfeutrage 3" class="gallery-img">
                     <div class="gallery-overlay">
-                        <h3>Rénovation de Salle de Bain</h3>
-                        <p>Calfeutrage anti-humidité pour baignoire et douche</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/api/placeholder/400/400" alt="Projet de calfeutrage 4" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3>Traitement de Fondation</h3>
-                        <p>Scellement des fissures et prévention d'infiltration</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/api/placeholder/400/400" alt="Projet de calfeutrage 5" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3>Rénovation de Façade</h3>
-                        <p>Calfeutrage des joints de parement extérieur</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/api/placeholder/400/400" alt="Projet de calfeutrage 6" class="gallery-img">
-                    <div class="gallery-overlay">
-                        <h3>Projet Résidentiel</h3>
-                        <p>Calfeutrage pour l'efficacité énergétique</p>
+                        <h3>Rénovation d'exterieur</h3>
+                        <p>Calfeutrage extérieur anti-humidité et l'infiltration de l'eau</p>
                     </div>
                 </div>
             </div>
@@ -134,7 +113,7 @@
                 <p>Remplissez le formulaire ci-dessous pour recevoir un devis personnalisé</p>
             </div>
             <div class="form-container">
-                <form id="quote-form">
+                <form action="https://formsubmit.io/send/niazov.sultan@gmail.com" method="POST" id="quote-form">
                     <div class="form-row">
                         <div class="form-col">
                             <div class="form-group">
@@ -163,7 +142,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="linearFeet">Mètres linéaires à traiter
                             <div class="info-bubble">
                                 <span class="info-icon">i</span>
@@ -175,7 +154,7 @@
                             </div>
                         </label>
                         <input type="number" id="linearFeet" class="form-control" min="0" step="0.1" required>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="description">Description des services requis</label>
                         <textarea id="description" class="form-control"
@@ -211,7 +190,7 @@
                 <p>123 Rue du Calfeutrage</p>
                 <p>Montréal, QC H1X 2Y3</p>
                 <p>Téléphone: (514) 123-4567</p>
-                <p>Email: info@calfeutragepro.ca</p>
+                <p>Email: info@calfeupro.ca</p>
             </div>
         </div>
         <div class="copyright container">
@@ -220,7 +199,6 @@
     </footer>
 
     <script>
-        // Form submission
         document.getElementById('quote-form').addEventListener('submit', function (e) {
             e.preventDefault();
             alert('Merci pour votre demande! Nous vous contacterons sous peu avec un devis personnalisé.');
