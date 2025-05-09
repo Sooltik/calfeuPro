@@ -13,7 +13,7 @@
     <nav>
         <div class="container nav-container">
             <div class="logo">
-                <img src="/src/public/caulking.png" alt="Logo Calfeutrage">
+                <img src="/public/caulking.png" alt="Logo Calfeutrage">
                 <span>CalfeuPro</span>
             </div>
             <ul class="nav-links">
@@ -43,7 +43,7 @@
             </div>
             <div class="services-container">
                 <div class="service-card">
-                    <img src="/src/public/window.png" alt="Calfeutrage de fenêtres" class="service-img">
+                    <img src="/public/window.png" alt="Calfeutrage de fenêtres" class="service-img">
                     <div class="service-content">
                         <h3>Calfeutrage de Fenêtres</h3>
                         <p>Le calfeutrage consiste à sceller les interstices autour des fenêtres pour empêcher les
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="/src/public/door.png" alt="Calfeutrage de portes" class="service-img">
+                    <img src="/public/door.png" alt="Calfeutrage de portes" class="service-img">
                     <div class="service-content">
                         <h3>Calfeutrage de Portes</h3>
                         <p>Nous appliquons un scellant de haute qualité autour des cadres de portes pour éliminer les
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="/src/public/house.png" alt="Calfeutrage d'expansion" class="service-img">
+                    <img src="/public/house.png" alt="Calfeutrage d'expansion" class="service-img">
                     <div class="service-content">
                         <h3>Calfeutrage d'Expansion</h3>
                         <p>Nous appliquons un calfeutrage d'expansion spécialement conçu pour protéger contre
@@ -81,21 +81,21 @@
             </div>
             <div class="gallery-container">
                 <div class="gallery-item">
-                    <img src="/src/public/residential.png" alt="Projet de calfeutrage 1" class="gallery-img">
+                    <img src="/public/residential.png" alt="Projet de calfeutrage 1" class="gallery-img">
                     <div class="gallery-overlay">
                         <h3>Rénovation Résidentielle</h3>
                         <p>Calfeutrage complet des fenêtres et portes</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/src/public/commercial.png" alt="Projet de calfeutrage 2" class="gallery-img">
+                    <img src="/public/commercial.png" alt="Projet de calfeutrage 2" class="gallery-img">
                     <div class="gallery-overlay">
                         <h3>Immeuble Commercial</h3>
                         <p>Calfeutrage à grande échelle et protection contre les intempéries</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="/src/public/outside-renovation.png" alt="Projet de calfeutrage 3" class="gallery-img">
+                    <img src="/public/outside-renovation.png" alt="Projet de calfeutrage 3" class="gallery-img">
                     <div class="gallery-overlay">
                         <h3>Rénovation d'exterieur</h3>
                         <p>Calfeutrage extérieur anti-humidité et l'infiltration de l'eau</p>
@@ -113,18 +113,24 @@
                 <p>Remplissez le formulaire ci-dessous pour recevoir un devis personnalisé</p>
             </div>
             <div class="form-container">
-                <form action="https://formsubmit.io/send/niazov.sultan@gmail.com" method="POST" id="quote-form">
+                <form action="https://formsubmit.co/bfd03db9fe8a582cf827c8303dc8cf8a" method="POST">
+                    <input type="text" name="_honey" style="display:none">
+
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
+
                     <div class="form-row">
                         <div class="form-col">
                             <div class="form-group">
                                 <label for="firstName">Prénom</label>
-                                <input type="text" id="firstName" class="form-control" required>
+                                <input type="text" id="firstName" name="Prénom" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-col">
                             <div class="form-group">
                                 <label for="lastName">Nom</label>
-                                <input type="text" id="lastName" class="form-control" required>
+                                <input type="text" id="lastName" name="Nom" class="form-control" required>
                             </div>
                         </div>
                     </div>
@@ -132,32 +138,19 @@
                         <div class="form-col">
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" class="form-control" required>
+                                <input type="email" id="email" name="Email" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-col">
                             <div class="form-group">
                                 <label for="phone">Numéro de téléphone</label>
-                                <input type="tel" id="phone" class="form-control" required>
+                                <input type="tel" id="phone" name="Téléphone" class="form-control" required>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="form-group">
-                        <label for="linearFeet">Mètres linéaires à traiter
-                            <div class="info-bubble">
-                                <span class="info-icon">i</span>
-                                <div class="info-content">
-                                    <p>Pour calculer les mètres linéaires, mesurez la longueur totale des zones à
-                                        calfeutrer. Par exemple, pour une fenêtre, mesurez le périmètre complet (les 4
-                                        côtés). Pour plusieurs fenêtres, additionnez tous les périmètres.</p>
-                                </div>
-                            </div>
-                        </label>
-                        <input type="number" id="linearFeet" class="form-control" min="0" step="0.1" required>
-                    </div> -->
                     <div class="form-group">
                         <label for="description">Description des services requis</label>
-                        <textarea id="description" class="form-control"
+                        <textarea id="description" name="Description" class="form-control"
                             placeholder="Décrivez votre projet, incluant le type de surface à calfeutrer, l'emplacement, et tout détail pertinent..."
                             required></textarea>
                     </div>
@@ -197,14 +190,6 @@
             <p>&copy; 2025 CalfeuPro. Tous droits réservés.</p>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('quote-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Merci pour votre demande! Nous vous contacterons sous peu avec un devis personnalisé.');
-            this.reset();
-        });
-    </script>
 </body>
 
 </html>

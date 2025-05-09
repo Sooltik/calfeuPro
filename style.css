@@ -78,7 +78,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('/src/public/hero-bg.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('/public/hero-bg.jpg') center/cover no-repeat;
     height: 100vh;
     display: flex;
     align-items: center;
